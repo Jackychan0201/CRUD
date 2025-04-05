@@ -34,6 +34,10 @@ def note_serializer(note):
         "description": note["description"]
     }
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Notes API is running"}
+
 #get all notes
 @app.get("/notes")
 async def get_notes():
