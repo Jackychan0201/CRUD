@@ -22,7 +22,7 @@ collection = db["notes"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://jackychan0201.github.io/CRUD/"],
+    allow_origins=["https://jackychan0201.github.io"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
