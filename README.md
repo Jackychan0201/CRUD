@@ -26,16 +26,34 @@ The application's parts are deployed separately:
 ## Installation and testing the app locally
 Here are the steps for local testing of the application:
 - Clone the project:
-![gitClone](/Docs/gitClone.png)
+```bash
+git clone https://github.com/Jackychan0201/CRUD.git
+```
 - Navigate to the project directory:
-![cdCRUD](/Docs/cdCRUD.png)
+```bash
+cd CRUD
+```
 - Navigate to the backend directory:
-![cdBackend](/Docs/cdBackend.png)
+```bash
+cd backend
+```
 - Install the requirements from the file requirements.txt
-![pipInstall](/Docs/pipInstall.png)
+```bash
+pip install -r requirements.txt
+```
 - Start the backend:
-![runBackend](/Docs/runBackend.png)
+```bash
+uvicorn main:app --reload
+```
 - Navigate to the frontend directory:
-![cdFrontend](/Docs/cdFrontend.png)
+```bash
+cd ../frontend
+```
 - Install necessary dependencies:
-![npmInstall](/Docs/npmInstall.png)
+```bash
+npm install
+```
+- Start the frontend:
+```bash
+npm start
+```
