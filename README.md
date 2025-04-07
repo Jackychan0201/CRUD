@@ -1,21 +1,23 @@
 # CRUD Notes App
 ![NotesAppLogo](/Docs/NotesApp.png)
 
+**Tech Stack:** TypeScript · React · FastAPI · MongoDB · Jotai · Material UI
+
 ## A web notes application, where you can create, access and delete notes. Made as a recruitment task
 
 ## Project description
-This project is a recruitment task. It involves such chatacteristics as:
+This project was created as part of a recruitment task and includes the following technologies and characteristics:
 * Language:  TypeScript
 * Frontend: React.js
-* Backend: Python
+* Backend: Python(FatsAPI framework)
 * Database:  MongoDB
 * Tools:  Jotai(state management),  Material-UI(UI)
 
 ## Project features
 In this app you can:
 * Read notes
-* Create notes with title and description(createdAt attribute is added automatically) - after button "Add note" is pressed, the note is being added to the notes list
-* Delete notes - after button "Delete" is pressed, the note is being deleted from the notes list
+* Create notes with title and description(createdAt attribute is added automatically) - after button "Add note" is pressed, the note is added to the notes list
+* Delete notes - after button "Delete" is pressed, the note is deleted from the notes list
 
 ## Application deployment
 The application's parts are deployed separately: 
@@ -37,6 +39,12 @@ cd CRUD
 ```bash
 cd backend
 ```
+- Set the environment variable:
+    - create a .env file inside the backend directory:
+    ```bash
+    touch .env
+    ```
+    - insert there MongoDB URI and save the file. The example of the .env file is .env.example
 - Install the requirements from the file requirements.txt
 ```bash
 pip install -r requirements.txt
@@ -52,6 +60,12 @@ uvicorn main:app --reload
 ```bash
 cd ../frontend
 ```
+- Set the environment variables:
+    - create a .env file inside the frontend directory:
+    ```bash
+    touch .env
+    ```
+    - insert there the React App API URLs and save the file. The example of the .env file is .env.example
 - Install necessary dependencies:
 ```bash
 npm install
@@ -69,4 +83,11 @@ The application is already deployed. You can access it via:
 https://jackychan0201.github.io/CRUD/
 >[!WARNING]
 >
->Since the free tier version of Render is used for the backend deployment, the backend might be inactive during the test. If this problem occurs, please do not hesitate to contact me, I will restart the backend. 
+>Since the free tier version of Render is used for the backend deployment, the backend might be inactive during the test. If this problem occurs, please feel free to contact me, I will restart the backend.
+
+## Found a bug?
+If you found an issue while testing the app or you would like to submit an improvement for the project, I encourage you to contact me via my email: zheniabudko@gmail.com
+
+## Work in progress
+I am currently working on:
+- Editing the note
