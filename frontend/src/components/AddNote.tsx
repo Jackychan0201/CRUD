@@ -15,7 +15,7 @@ const AddNote: React.FC = () => {
     if (title && description) {
       setLoading(true); 
       try {
-        const createdAt = new Date().toLocaleString()
+        const createdAt = new Date().toISOString()
         await addNote(title, description, createdAt);
         const newNotes = await fetchNotes();
         setNotes(newNotes);
