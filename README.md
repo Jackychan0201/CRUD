@@ -18,6 +18,7 @@ In this app you can:
 * Read notes
 * Create notes with title and description(createdAt attribute is added automatically) - after button "Add note" is pressed, the note is added to the notes list
 * Delete notes - after button "Delete" is pressed, the note is deleted from the notes list
+[!demonstration](/Docs/demonstration.gif)
 
 ## Application deployment
 The application's parts are deployed separately: 
