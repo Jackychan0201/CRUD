@@ -66,6 +66,4 @@ npm start
 
 ## Deployed application
 The application is already deployed. You can access it via:
-```bash
 https://jackychan0201.github.io/CRUD/
-```
