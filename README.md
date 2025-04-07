@@ -45,6 +45,9 @@ pip install -r requirements.txt
 ```bash
 uvicorn main:app --reload
 ```
+>[!NOTE]
+>
+>backend is running on http://127.0.0.1:8000
 - Navigate to the frontend directory:
 ```bash
 cd ../frontend
@@ -56,4 +59,13 @@ npm install
 - Start the frontend:
 ```bash
 npm start
+```
+>[!NOTE]
+>
+>After you complete all these steps, you'll be able to access the application via http://localhost:3000/CRUD
+
+## Deployed application
+The application is already deployed. You can access it via:
+```bash
+https://jackychan0201.github.io/CRUD/
 ```
