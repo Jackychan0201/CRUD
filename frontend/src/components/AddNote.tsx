@@ -36,6 +36,9 @@ const AddNote: React.FC = () => {
           fullWidth
           placeholder="Task title"
           value={title}
+          slotProps={{
+            htmlInput: {maxLength: 10},
+          }}
           onChange={(e) => setTitle(e.target.value)}
         />
         <TextField
@@ -46,6 +49,9 @@ const AddNote: React.FC = () => {
           multiline
           rows={4}
           value={description}
+          slotProps={{
+            htmlInput: {maxLength: 50},
+          }}
           onChange={(e) => setDescription(e.target.value)}
         />
         <Button onClick={handleAddNote} disabled={loading} variant="contained" color="primary" sx={{mb: 3}}>

@@ -1,12 +1,5 @@
 import React from "react";
-import { 
-  Button, 
-  Card, 
-  CardContent, 
-  Typography, 
-  CardActions, 
-  Divider
-} from "@mui/material";
+import { Button, Card, CardContent, Typography, CardActions, Divider } from "@mui/material";
 import { deleteNote } from "../api";
 
 interface NoteProps {

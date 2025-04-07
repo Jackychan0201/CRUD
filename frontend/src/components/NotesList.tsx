@@ -3,13 +3,7 @@ import { useAtom } from "jotai";
 import { notesAtom } from "../atoms";
 import { fetchNotes } from "../api";
 import NoteItem from "./NoteItem";
-import { 
-  CircularProgress, 
-  Container, 
-  Grid, 
-  Typography,
-  Paper
-} from "@mui/material";
+import { CircularProgress, Container, Grid, Typography, Paper } from "@mui/material";
 
 const NotesList: React.FC = () => {
   const [notes, setNotes] = useAtom(notesAtom);
