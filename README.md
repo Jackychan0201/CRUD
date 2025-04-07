@@ -1,11 +1,12 @@
 # CRUD Notes App
 ![NotesAppLogo](/Docs/NotesApp.png)
 
-**Tech Stack:** TypeScript · React · FastAPI · MongoDB · Jotai · Material UI
-
 ## A web notes application, where you can create, access and delete notes. Made as a recruitment task
 
 ## Project description
+
+**Tech Stack:** TypeScript · React · FastAPI · MongoDB · Jotai · Material UI
+
 This project was created as part of a recruitment task and includes the following technologies and characteristics:
 * Language:  TypeScript
 * Frontend: React.js
@@ -18,6 +19,7 @@ In this app you can:
 * Read notes
 * Create notes with title and description(createdAt attribute is added automatically) - after button "Add note" is pressed, the note is added to the notes list
 * Delete notes - after button "Delete" is pressed, the note is deleted from the notes list
+
 ![demonstration](/Docs/demonstration.gif)
 
 ## Application deployment
