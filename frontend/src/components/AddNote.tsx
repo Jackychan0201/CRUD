@@ -7,17 +7,25 @@ import { notesAtom } from "../atoms";
 const AddNote: React.FC = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(false);
   const [, setNotes] = useAtom(notesAtom);
 
   const handleAddNote = async () => {
+    if (loading) return; 
     if (title && description) {
-      await addNote(title, description);
-      const newNotes = await fetchNotes();
-      setNotes(newNotes);
-      setTitle("");
-      setDescription("");
+      setLoading(true); 
+      try {
+        await addNote(title, description);
+        const newNotes = await fetchNotes();
+        setNotes(newNotes);
+        setTitle("");
+        setDescription("");
+      } finally {
+        setLoading(false); 
+      }
     }
   };
+  
 
   return (
     <Container>
@@ -40,8 +48,8 @@ const AddNote: React.FC = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <Button onClick={handleAddNote} variant="contained" color="primary" sx={{mb: 3}}>
-          Add Note
+        <Button onClick={handleAddNote} disabled={loading} variant="contained" color="primary" sx={{mb: 3}}>
+          {loading ? "Adding..." : "Add Note"}
         </Button>
       </Box>
     </Container>
