@@ -11,6 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv 
 from typing import List
+from datetime import datetime
+
 
 load_dotenv()
 
@@ -37,7 +39,8 @@ def note_serializer(note) -> dict:
         return {
             "id": str(note["_id"]),
             "title": note["title"],
-            "description": note["description"]
+            "description": note["description"],
+            "createdAt": note["createdAt"]
         }
     except KeyError as e:
         raise ValueError(f"Missing field: {str(e)}")
@@ -60,10 +63,11 @@ async def get_notes():
 @app.post("/notes", status_code=status.HTTP_201_CREATED)
 async def add_note(note: Note):
     try:
-        note_data = note.dict()
+        note_data = note.dict()   
         result = collection.insert_one(note_data)
         return {
             "id": str(result.inserted_id),
+            "createdAt": note_data['createdAt'],
             "message": "Note added successfully"
         }
     except OperationFailure as e:

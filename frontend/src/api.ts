@@ -9,8 +9,8 @@ export const fetchNotes = async () => {
   return response.data;
 };
 
-export const addNote = async (title: string, description: string) => {
-  const response = await axios.post(`${API_URL}/notes`, { title, description });
+export const addNote = async (title: string, description: string, createdAt: string) => {
+  const response = await axios.post(`${API_URL}/notes`, { title, description, createdAt });
   return response.data;
 };
 

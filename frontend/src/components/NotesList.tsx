@@ -26,12 +26,7 @@ const NotesList: React.FC = () => {
       {notes.length === 0 ? (
         <Paper 
           elevation={0} 
-          sx={{ 
-            p: 4, 
-            display: 'flex', 
-            justifyContent: 'center',
-            backgroundColor: 'transparent'
-          }}
+          sx={{ p: 4, display: 'flex', justifyContent: 'center', backgroundColor: 'transparent' }}
         >
           {notes === null ? (
             <CircularProgress />
@@ -43,12 +38,13 @@ const NotesList: React.FC = () => {
         </Paper>
       ) : (
         <Grid container spacing={3}>
-          {notes.map((note: {id: string; title: string; description: string }) => (
+          {notes.map((note: {id: string; title: string; description: string; createdAt: string }) => (
               <NoteItem
                 key={String(note.id)}
                 id={String(note.id)}
                 title={note.title}
                 description={note.description}
+                createdAt={note.createdAt}
                 refreshNotes={() => fetchNotes().then(setNotes)}
               />
           ))}

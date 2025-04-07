@@ -6,10 +6,11 @@ interface NoteProps {
   id: string;
   title: string;
   description: string;
+  createdAt: string;
   refreshNotes: () => void;
 }
 
-const NoteItem: React.FC<NoteProps> = ({ id, title, description, refreshNotes }) => {
+const NoteItem: React.FC<NoteProps> = ({ id, title, description, createdAt, refreshNotes }) => {
   const handleDelete = async () => {
     await deleteNote(id);
     refreshNotes();
@@ -17,9 +18,7 @@ const NoteItem: React.FC<NoteProps> = ({ id, title, description, refreshNotes })
 
   return (
     <Card 
-      sx={{ 
-        marginBottom: 3,
-        boxShadow: 3,
+      sx={{ marginBottom: 3, boxShadow: 3,
         '&:hover': {
           boxShadow: 6,
           transition: 'box-shadow 0.3s ease-in-out'
@@ -34,12 +33,17 @@ const NoteItem: React.FC<NoteProps> = ({ id, title, description, refreshNotes })
         <Typography 
           variant="body1" 
           color="text.secondary"
-          sx={{ 
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word'
-          }}
+          sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
         >
           {description}
+        </Typography>
+        <Divider sx={{ my: 1 }} />
+        <Typography 
+          variant="body1" 
+          color="text.secondary"
+          sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+        >
+          Created at: {createdAt}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'flex-end', p: 2 }}>

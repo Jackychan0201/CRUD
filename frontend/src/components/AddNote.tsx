@@ -15,7 +15,8 @@ const AddNote: React.FC = () => {
     if (title && description) {
       setLoading(true); 
       try {
-        await addNote(title, description);
+        const createdAt = new Date().toLocaleString()
+        await addNote(title, description, createdAt);
         const newNotes = await fetchNotes();
         setNotes(newNotes);
         setTitle("");
@@ -34,10 +35,10 @@ const AddNote: React.FC = () => {
           sx={{mb: 3}}
           variant="outlined"
           fullWidth
-          placeholder="Task title"
+          placeholder="Task title(up to 30 characters)"
           value={title}
           slotProps={{
-            htmlInput: {maxLength: 10},
+            htmlInput: { minLength: 1, maxLength: 30 },
           }}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -45,12 +46,12 @@ const AddNote: React.FC = () => {
         sx={{mb: 3}}
           variant="outlined"
           fullWidth
-          placeholder="Task description"
+          placeholder="Task description(up to 100 characters)"
           multiline
           rows={4}
           value={description}
           slotProps={{
-            htmlInput: {maxLength: 50},
+            htmlInput: {minLength: 1, maxLength: 100},
           }}
           onChange={(e) => setDescription(e.target.value)}
         />
