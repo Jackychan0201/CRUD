@@ -43,7 +43,7 @@ const NoteItem: React.FC<NoteProps> = ({ id, title, description, createdAt, refr
           color="text.secondary"
           sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
         >
-          Created at: {createdAt}
+          Created at: {new Date(createdAt).toLocaleString()}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'flex-end', p: 2 }}>
